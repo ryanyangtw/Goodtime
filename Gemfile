@@ -32,7 +32,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.3.5'
 gem "font-awesome-rails"
 gem 'devise'
 
@@ -47,6 +47,8 @@ gem "figaro"
 gem 'sidekiq'
 
 gem 'bootstrap_form'
+
+gem 'compass-rails', git: 'https://github.com/Compass/compass-rails.git', branch: 'master'
 
 
 group :staging, :production do
