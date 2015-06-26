@@ -11,10 +11,8 @@
  * file per style scope.
  *
  * require_tree .
- *= require sass/main
  *= require bootstrap-multiselect
- *= require animate.min
- *= require creative
- *= require form
+ *= require sass/main
+
  *= require_self
  */

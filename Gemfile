@@ -50,6 +50,7 @@ gem 'bootstrap_form'
 
 gem 'compass-rails', git: 'https://github.com/Compass/compass-rails.git', branch: 'master'
 
+
 gem 'bootstrap-multiselect-rails'
 
 group :staging, :production do

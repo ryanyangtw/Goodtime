@@ -210,3 +210,37 @@
 .input-flat.input-fb-name {
   width:50%;
 }
+
+.div-fb_btn:before{
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 50px;
+}
+
+.fb_btn {
+/*  width: 266px;
+  height: 40px;
+  left: 119px;
+  top: 115px;*/
+  display: inline-block;
+  width: 46%;
+  height: 40px;
+  background: url(<%= asset_path("fb-btn.png") %>);
+  cursor: pointer;
+  text-align: center;
+  line-height: 2.666;
+  /*font-size: 1em;*/
+  font-size: 14px;
+  /*font-family: '微軟正黑體','century gothic regular',Arial;*/
+  color: #FFFFFF;
+  text-indent: 30px;
+  vertical-align: middle;
+
+  @include border-radius(5px);
+}
+
+.hover_opacity {
+  opacity: 1;
+  /*cursor: pointer;*/
+}

@@ -19,6 +19,7 @@
 //= require wow.min.js
 //= require creative.js
 //= require form.js
+//= require facebook.js
 
 // require turbolinks
 // require_tree .
