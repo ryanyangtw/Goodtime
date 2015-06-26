@@ -50,6 +50,7 @@ gem 'bootstrap_form'
 
 gem 'compass-rails', git: 'https://github.com/Compass/compass-rails.git', branch: 'master'
 
+gem 'bootstrap-multiselect-rails'
 
 group :staging, :production do
   gem 'rails_12factor'
@@ -77,7 +78,7 @@ group :development, :test do
   gem 'meta_request'
   gem 'better_errors'
   gem "binding_of_caller"
-  gem 'guard-livereload'
+  gem 'guard-livereload', '~> 2.4', require: false
   gem 'annotate', '~> 2.6.5'
   gem 'awesome_print', :require => false
   gem 'hirb', :require => false

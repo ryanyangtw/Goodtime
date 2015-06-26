@@ -12,7 +12,9 @@
  *
  * require_tree .
  *= require sass/main
+ *= require bootstrap-multiselect
  *= require animate.min
  *= require creative
+ *= require form
  *= require_self
  */

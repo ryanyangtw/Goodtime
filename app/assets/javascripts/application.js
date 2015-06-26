@@ -13,10 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require bootstrap-multiselect
 //= require jquery.easing.min.js
 //= require jquery.fittext.js
 //= require wow.min.js
 //= require creative.js
+//= require form.js
 
 // require turbolinks
 // require_tree .
