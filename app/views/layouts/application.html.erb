@@ -8,7 +8,16 @@
 </head>
 <body id="page-top">
 
+<%= render 'shared/header' %>
 <%= yield %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<script>
+  // $("#mainNav").removeClass('affix-top').addClass('affix');
+  // $(document).ready(function() {
+  //   $("#mainNav").css("border-color", "rgba(34, 34, 34, 0.05)");
+  //   $("#mainNav").css("background-color", "#fff");
+  //   $(".navbar-brand").css("font-size", "14px").css("color", "#f05f40");
+  // });
+</script>
 </body>
 </html>

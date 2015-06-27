@@ -184,7 +184,7 @@
 
 .input-register-submit {
   display: inline-block;
-  margin-top: 25px;
+  margin-top: 15px;
   font-size: 1.5em;
   font-weight: 400;
   color: #fff;
@@ -194,17 +194,32 @@
   width: 98%;
   border: none;
   background: #89FFFF;
+  @include border-radius(5px);
 }
 
 .login-description {
+  display: inline-block;
+  margin-top: 10px;
   color: #848484;
   font-size: 16px;
 }
 
 .section-form {
   /*background-color: aqua;*/
-  background: url(<%= asset_path("grey.png") %>);
+  /*background: url(<%= asset_path("grey.png") %>);*/
+  /*background: url(<%= asset_path("grey.png") %>);*/
+  background: url(<%= asset_path("header.jpg") %>);
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+
+  position: relative;
+  width: 100%;
+  min-height: auto;
   text-align: center;
+  color: #fff;
 }
 
 .input-flat.input-fb-name {
@@ -215,7 +230,13 @@
   content: '';
   display: inline-block;
   vertical-align: middle;
-  height: 50px;
+  /*height: 50px;*/
+}
+
+.check-icon {
+  display: inline-block;
+  vertical-align: middle;
+  color: #858282;
 }
 
 .fb_btn {
@@ -224,18 +245,24 @@
   left: 119px;
   top: 115px;*/
   display: inline-block;
-  width: 46%;
-  height: 40px;
-  background: url(<%= asset_path("fb-btn.png") %>);
+  width: 80%;
+  height: 50px;
+  background: url(<%= asset_path("fb-btn.png") %>) no-repeat;
+  background-size: 100% 100%;
+/*  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;*/
+
   cursor: pointer;
   text-align: center;
   line-height: 2.666;
   /*font-size: 1em;*/
-  font-size: 14px;
+  font-size: 17px;
   /*font-family: '微軟正黑體','century gothic regular',Arial;*/
   color: #FFFFFF;
   text-indent: 30px;
-  vertical-align: middle;
+  /*vertical-align: middle;*/
 
   @include border-radius(5px);
 }
@@ -243,4 +270,27 @@
 .hover_opacity {
   opacity: 1;
   /*cursor: pointer;*/
+}
+
+.hover_opacity:hover {
+  opacity: 0.6;
+}
+ 
+.divider {
+  margin: 1rem 0rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.8);
+  line-height: 1;
+  height: 0em;
+}
+
+.green {
+  color: green;
+}
+
+.fb_success_message {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 1.3em;
+  color: #858282;
 }
