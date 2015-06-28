@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Girlstimegoodtime</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
  
   <%= csrf_meta_tags %>
 </head>
@@ -10,7 +10,7 @@
 
 <%= render 'shared/header' %>
 <%= yield %>
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application'%>
 <script>
   // $("#mainNav").removeClass('affix-top').addClass('affix');
   // $(document).ready(function() {

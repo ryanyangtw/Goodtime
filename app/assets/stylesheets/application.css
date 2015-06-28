@@ -11,7 +11,11 @@
  * file per style scope.
  *
  * require_tree .
+ *= require bootstrap.min.css
  *= require bootstrap-multiselect
+ *= require font-awesome/css/font-awesome.min.css
+ *= require animate.min.css
+ *= require creative.css
  *= require sass/main
  *= require_self
  */
