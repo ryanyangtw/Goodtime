@@ -13,7 +13,7 @@
  * require_tree .
  *= require bootstrap.min.css
  *= require bootstrap-multiselect
- *= require font-awesome/css/font-awesome.min.css
+ * require font-awesome/css/font-awesome.min.css
  *= require animate.min.css
  *= require creative.css
  *= require sass/main
