@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'my_devise/registrations', sessions: 'my_devise/sessions', :omniauth_callbacks => "users/omniauth_callbacks" }
   root to: "pages#index"
   resources :users, only: [:new, :create, :edit, :update]
 
-  resources :sessions, only: :create
-  get 'sign_in', to: "sessions#new"
-  delete 'sign_out', to: "sessions#destroy"
+  # resources :sessions, only: :create
+  # get 'sign_in', to: "sessions#new"
+  # delete 'sign_out', to: "sessions#destroy"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

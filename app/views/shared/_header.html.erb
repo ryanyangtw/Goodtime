@@ -28,13 +28,21 @@
                 <li>
                     <a class="page-scroll" href="#contact">Contact</a>
                 </li>
-
-                <li>
-                  <%= link_to("登入", sign_in_path) %>
-                </li>
-                <li>
-                  <%= link_to("註冊", new_user_path) %>
-                </li>
+                <% if current_user %>
+                  <li>
+                    <%= link_to("帳號設定", edit_user_registration_path) %>
+                  </li>
+                  <li>
+                    <%= link_to("登出", destroy_user_session_path, method: :delete) %>
+                  </li>
+                <% else %>
+                  <li>
+                    <%= link_to("登入", new_user_session_path) %>
+                  </li>
+                  <li>
+                    <%= link_to("註冊", new_user_registration_path) %>
+                  </li>
+                <% end %>
             </ul>
         </div>
         <!-- /.navbar-collapse -->

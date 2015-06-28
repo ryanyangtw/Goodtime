@@ -20,6 +20,7 @@
 //= require creative.js
 //= require form.js
 //= require facebook.js
+//= require jquery.twzipcode.min.js
 
 // require turbolinks
 // require_tree .

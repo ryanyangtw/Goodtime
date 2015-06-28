@@ -35,7 +35,16 @@ window.fbAsyncInit = function() {
 
 
 $(document).ready(function() {
-    $('.fb_btn').on("click", function() {
+    console.log("ypoooo");
+    var provider = $('.input-provider').val();
+    if (provider === "facebook") {
+      hideInput();
+    }
+    // if $('.input-provider').val() == "facebook" {
+    //   hideInput();
+    // }
+
+    $('.fb_btn_signup').on("click", function() {
       console.log("click facebook button");
       FB.login(function(response) {
         console.log(response);
@@ -54,15 +63,15 @@ $(document).ready(function() {
     });
 });
 
-function getCurrentUserInfo() {
+function getCurrentUserInfo(response) {
   FB.api('/me', function(userInfo) {
-    console.log(userInfo.name + ': ' + userInfo.email);
+    console.log(userInfo.name + ': ' + userInfo.email +  " "+ response.authResponse.userID);
     
-    setupUI(userInfo.email, userInfo.name);
+    setupUI(userInfo.email, userInfo.name, response.authResponse.userID);
   });
 }
 
-function setupUI(email, name) {
+function setupUI(email, name, uid) {
   $('.check-icon').addClass("green");
   $('.form-grup-email').addClass("hidden");
   $('.form-grup-password').addClass("hidden");
@@ -72,6 +81,19 @@ function setupUI(email, name) {
 
   $('.input-email').val(email);
   $('.input-fbnickname').val(name);
+  $('.input-uid').val(uid);
+  $('.input-provider').val('facebook');
+  
+}
+
+function hideInput() {
+  console.log("hideInput");
+  $('.check-icon').addClass("green");
+  $('.form-grup-email').addClass("hidden");
+  $('.form-grup-password').addClass("hidden");
+  $('.form-grup-fbnickname').addClass("hidden");
+
+  $('.fb_success_message').html("已綁定Facebook，請填完以下表單並送出，完成註冊。");
 }
 
 

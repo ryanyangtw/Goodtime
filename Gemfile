@@ -35,6 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3.5'
 gem "font-awesome-rails"
 gem 'devise'
+gem 'omniauth-facebook'
 
 gem 'carrierwave', "~> 0.10.0"
 #gem "fog", "~> 1.29.0"

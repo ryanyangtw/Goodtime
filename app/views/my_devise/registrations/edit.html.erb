@@ -1,0 +1,114 @@
+
+<section class="section-form">
+  <div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">  
+          <div class="two-login-head background-blue">
+              <%= image_tag('top-note.png') %>
+              <h3>修改帳戶資料</h3>
+              <div class="trangle-blue"></div>
+          </div>
+
+          <div class="well background-white" >
+
+              <%= form_for(@user, html: { class: "form-edit"},  url: user_registration_path, method: :patch ) do |f| %>
+
+                  <%= render 'shared/messages' %>
+
+                  <div class="divider"></div>
+
+
+                  <% if !@user.register_from_fb? %>
+  
+                    <div class="form-group">
+                      <div class="input-group">
+                        <span class="input-group-addon span-register-icon background-blue">
+                            <i class="fa fa-envelope-o fa-2x fa-fw"></i>
+                        </span>
+                        <%= f.email_field(:email, class: "form-control input-flat input-email", placeholder: "信箱", hide_label: true)%>
+
+                      </div>
+                    </div>
+
+                  <% end %>
+
+
+                  <div class="form-group">
+                    <div class="input-group">
+                      <span class="input-group-addon span-register-icon background-blue">
+                          <i class="fa fa-user fa-2x fa-fw"></i>
+                      </span>
+                      <%= f.text_field(:name, class: "form-control input-flat", placeholder: "姓名", hide_label: true)%>
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <div class="input-group">
+                      <span class="input-group-addon span-register-icon background-blue">
+                          <i class="fa fa fa-phone fa-2x fa-fw"></i>
+                      </span>
+                      <%= f.text_field(:phone_number, class: "form-control input-flat", placeholder: "手機", hide_label: true)%>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="input-group">
+                      <span class="input-group-addon span-register-icon background-blue">
+                          <i class="fa fa-facebook-square fa-2x fa-fw"></i>
+                      </span>
+                      <%= f.text_field(:nickname, class: "form-control input-flat", placeholder: "Facebook 暱稱", hide_label: true)%>
+                    </div>
+                  </div>
+  
+
+                  <label class="label-register" for="">地址:</label>
+                  <%= f.select(:address_country, options_for_select( @addres_convert_table.keys, @user.address_country), {}, class: "form-control select-register-address selector-country") %>
+
+                  <% 
+                    if @user.address_country != nil
+                      district_array = @addres_convert_table[@user.address_country.to_sym].keys
+                    else
+                      district_array = @addres_convert_table["台北市".to_sym].keys
+                    end
+                  %>
+                  <%= f.select(:address_district, options_for_select( district_array, @user.address_district), {}, class: "form-control select-register-address selector-district") %>
+
+
+
+                  <label class="label-register" for="">生日:</label>
+                  <%= f.select(:birthday_year, options_for_select( @birthday_year_hash, @user.birthday_year), {}, class: "form-control select-register-birthday selector-birthday_year") %>
+                  <%= f.select(:birthday_month, options_for_select( @birthday_month_hash, @user.birthday_month), {}, class: "form-control select-register-birthday selector-birthday_month") %>
+                  <%= f.select(:birthday_date, options_for_select( @birthday_date_hash, @user.birthday_date), {}, class: "form-control select-register-birthday selector-birthday_date") %>
+
+
+
+                  <div class="divider"></div>
+
+                  <% if !@user.register_from_fb? %>
+                    <div class="form-group form-grup-current_password">
+                      <div class="input-group">
+                        <span class="input-group-addon span-register-icon backgorund-red">
+                            <i class="fa fa fa-lock fa-2x fa-fw"></i>
+                        </span>
+                        <%= password_field_tag(:current_password, nil, class: "form-control input-flat", placeholder: "請填入目前密碼(必填)")%>
+                      </div>
+                    </div>
+                  <% end %>
+
+                  <%= f.submit "確認修改", class: "input-register-submit hover_opacity background-blue"%>
+
+                  <!-- <input class="input-register-submit hover_opacity" type="button" value="註冊"> -->
+
+                  <div class="divider"></div>
+                  
+                  <%= link_to("修改密碼", "#", class: "btn btn-info btn-lg")%>
+                  <!-- <span class="login-description">修改密碼 ? Login Here</span> -->
+
+              <% end %>
+
+          </div>  <!-- end of well -->
+        </div> <!-- end of col-md-6 -->
+    </div> <!-- end of row -->
+  </div>
+</section>

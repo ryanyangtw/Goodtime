@@ -1,21 +1,23 @@
 
-
 <section class="section-form">
   <div class="container">
     <div class="row">
         <div class="col-md-offset-3 col-md-6">  
           <div class="two-login-head">
               <%= image_tag('top-note.png') %>
-              <h3>register</h3>
+              <h3>註冊</h3>
               <div class="trangle"></div>
           </div>
 
           <div class="well background-white" >
 
-              <%= form_for(@user, html: { class: "form-login" }) do |f| %>
+              <%= form_for(@user, html: { class: "form-signup", url: user_registration_path }) do |f| %>
+
+                  <%= render partial: 'shared/errors', locals: {obj: @user} %>
+
                   <div class="div-fb_btn">
                     <i class="fa fa-check-circle fa-3x fa-fw check-icon"></i>
-                    <div class="fb_btn hover_opacity">使用 Facebook 註冊</div>
+                    <div class="fb_btn_signup fb_btn hover_opacity">使用 Facebook 註冊</div>
                   </div>
 
                   <span class="fb_success_message"></span>
@@ -35,7 +37,7 @@
 
 
 
-                                    <div class="form-group form-grup-password">
+                  <div class="form-group form-grup-password">
                     <div class="input-group">
                       <span class="input-group-addon span-register-icon">
                           <i class="fa fa fa-key fa-2x fa-fw"></i>
@@ -82,15 +84,19 @@
                       <span class="input-group-addon span-register-icon">
                           <i class="fa fa-facebook-square fa-2x fa-fw"></i>
                       </span>
-                      <%= f.text_field(:nickname, class: "form-control input-flat nput-fbnickname", placeholder: "暱稱", hide_label: true)%>
+                      <%= f.text_field(:nickname, class: "form-control input-flat input-fbnickname", placeholder: "Facebook 暱稱", hide_label: true)%>
                       <!-- <input type="text" class="form-control input-flat input-fbnickname" placeholder="Facebook 暱稱"> -->
                     </div>
                   </div>
 
+                  <%= f.hidden_field(:provider, class: "input-provider", hide_label: true)%>
+                  <%= f.hidden_field(:uid, class: "input-uid", hide_label: true)%>
+  
+
 
                   <label class="label-register" for="">請選擇加入過的跑團:</label>
                  
-                  <%= f.select(:course_ids, Course.generateNamesList, {}, class: "form-control select-group select-multiple", multiple: "multiple") %>
+                  <%= f.select(:course_ids, Course.generateNameList, {}, class: "form-control select-group select-multiple", multiple: "multiple") %>
                   <!-- <select multiple="multiple" class="form-control select-group select-multiple">
                     <option selected="selected">2014 慢跑好女孩週四不偷懶</option>
                     <option>2014 好時光女生慢跑團春天班</option>
@@ -100,17 +106,26 @@
                   </select> -->
 
                   <label class="label-register" for="">地址:</label>
-                  <%= f.select(:address_country, "", {}, class: "form-control select-register-address selector-country") %>
-                  <%= f.select(:address_district, "", {}, class: "form-control select-register-address selector-district") %>
+                  <%= f.select(:address_country, options_for_select( @addres_convert_table.keys, @user.address_country), {}, class: "form-control select-register-address selector-country") %>
+
+                  <% 
+                    if @user.address_country != nil
+                      district_array = @addres_convert_table[@user.address_country.to_sym].keys
+                    else
+                      district_array = @addres_convert_table["台北市".to_sym].keys
+                    end
+                  %>
+                  <%= f.select(:address_district, options_for_select( district_array, @user.address_district), {}, class: "form-control select-register-address selector-district") %>
                   <!-- <select class="form-control select-register-address selector-country">
-                  </select> -->
-                  <!-- <select class="form-control select-register-address selector-district">
+                  </select>
+                  <select class="form-control select-register-address selector-district">
                   </select> -->
 
+
                   <label class="label-register" for="">生日:</label>
-                  <%= f.select(:address_country, "", {}, class: "form-control select-register-birthday selector-birthday_year") %>
-                  <%= f.select(:address_country, "", {}, class: "form-control select-register-birthday selector-birthday_month") %>
-                  <%= f.select(:address_country, "", {}, class: "form-control select-register-birthday selector-birthday_date") %>
+                  <%= f.select(:birthday_year, options_for_select( @birthday_year_hash, @user.birthday_year), {}, class: "form-control select-register-birthday selector-birthday_year") %>
+                  <%= f.select(:birthday_month, options_for_select( @birthday_month_hash, @user.birthday_month), {}, class: "form-control select-register-birthday selector-birthday_month") %>
+                  <%= f.select(:birthday_date, options_for_select( @birthday_date_hash, @user.birthday_date), {}, class: "form-control select-register-birthday selector-birthday_date") %>
                   <!-- <select class="form-control select-register-birthday selector-birthday_year">
                   </select> -->
 

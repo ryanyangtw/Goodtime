@@ -11,10 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150626131933) do
+ActiveRecord::Schema.define(version: 20150627091441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "registration_forms", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "registration_forms", ["course_id"], name: "index_registration_forms_on_course_id", using: :btree
+  add_index "registration_forms", ["user_id"], name: "index_registration_forms_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -29,6 +45,16 @@ ActiveRecord::Schema.define(version: 20150626131933) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "nickname"
+    t.string   "address_country"
+    t.string   "address_district"
+    t.string   "birthday_year"
+    t.string   "birthday_month"
+    t.string   "birthday_date"
+    t.string   "phone_number"
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
