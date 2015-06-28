@@ -1,10 +1,10 @@
-class MyDevise::RegistrationsController < Devise::RegistrationsController
+class MyDevise::RegistrationsController < ApplicationController # Devise::RegistrationsController
 
   before_action :set_addres_convert_table
   before_action :set_birthday_day_hash
 
   def new
-    super
+    @user = User.new
   end
 
   def create
