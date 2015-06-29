@@ -58,6 +58,8 @@ gem 'compass-rails', git: 'https://github.com/Compass/compass-rails.git', branch
 
 gem 'bootstrap-multiselect-rails'
 
+gem 'ransack'
+
 # gem 'roadie'
 # gem 'roadie-rails'
 

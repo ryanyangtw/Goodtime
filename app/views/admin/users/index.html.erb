@@ -1,5 +1,10 @@
 <span style="font-size: 32px;">管理使用者</span> <span>(依照註冊)</span> <span>(藍色表示今天註冊的使用者)</span>
 
+<div class="pull-right">
+<% @q = User.ransack(params[:q])%>
+<%= render :partial=>'shared/ransack_form', :locals=>{:q => @q}%>
+</div>
+
 <div class="divider"></div>
 
 <div class="row">

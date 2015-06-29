@@ -21,4 +21,10 @@ class Admin::UsersController < AdminController
     redirect_to admin_users_path
   end
 
+  def search
+    @q = User.ransack(params[:q]) 
+    @users = @q.result(distinct: true).paginate(:page => params[:page], :per_page => 30 )
+    render :index
+  end
+
 end
