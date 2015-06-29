@@ -1,0 +1,51 @@
+
+<section class="section-form">
+  <div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">  
+          <div class="two-login-head background-yellow">
+              <%= image_tag('top-lock.png') %>
+              <h3>忘記密碼</h3>
+              <div class="trangle-yellow"></div>
+          </div>
+
+          <div class="well background-white" >
+
+
+              <%= form_tag(forgot_passwords_path, class: "form-login") do %>
+
+                  <%# render partial: 'shared/errors', locals: {obj: @user} %>
+                  <% if flash[:error].present? %>
+                    <br>
+                    <%= render 'shared/messages' %>
+                  <% end %>
+
+  
+                  <!-- <span class="fb_success_message"></span> -->
+
+                  <div class="divider"></div>
+
+                  <label class="label-register" for="">請輸入註冊時填入的信箱:</label>
+
+                  <div class="form-group form-grup-email">
+                    <div class="input-group">
+                      <span class="input-group-addon span-register-icon background-yellow">
+                          <i class="fa fa-envelope-o fa-2x fa-fw"></i>
+                      </span>
+                      <%= email_field_tag(:email, params[:email], class: "form-control input-flat input-email", placeholder: "信箱")%>
+                      <!-- <input type="text" class="form-control input-flat input-email" placeholder="信箱"> -->
+                    </div>
+                  </div>
+
+
+
+                  
+                  <%= submit_tag "寄送 Email 重設密碼", class: "input-register-submit hover_opacity background-yellow"%>
+
+
+              <% end %>
+          </div>  <!-- end of well -->
+        </div> <!-- end of col-md-6 -->
+    </div> <!-- end of row -->
+  </div>
+</section>

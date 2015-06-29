@@ -4,6 +4,13 @@ Rails.application.routes.draw do
   root to: "pages#index"
   resources :users, only: [:new, :create, :edit, :update]
 
+  get 'forgot_password', to: 'forgot_passwords#new'
+  resources :forgot_passwords, only: [:create]
+  get 'forgot_password_confirmation', to: 'forgot_passwords#confirm'
+
+  resources :password_resets, only: [:show, :create]
+  get 'expired_token', to: 'pages#expired_token'
+
 
   #add for sidekiq dashboard
   require 'sidekiq/web'

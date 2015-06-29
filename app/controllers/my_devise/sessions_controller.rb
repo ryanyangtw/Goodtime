@@ -11,7 +11,7 @@ class MyDevise::SessionsController < ApplicationController # Devise::SessionsCon
 
     if @user && @user.valid_password?(params[:password])
       # Copy from devise SessionsController
-      sign_in(resource_name, resource)
+      # sign_in(resource_name, resource)
       session[:user_id] = @user.id
       redirect_to root_path, notice: '成功登入：）'
     else

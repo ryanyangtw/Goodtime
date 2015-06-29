@@ -1,0 +1,50 @@
+
+<section class="section-form">
+  <div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">  
+          <div class="two-login-head background-yellow">
+              <%= image_tag('top-lock.png') %>
+              <h3>重設密碼</h3>
+              <div class="trangle-yellow"></div>
+          </div>
+
+          <div class="well background-white" >
+
+
+              <%= form_tag(password_resets_path, class: "form-login") do %>
+
+                  <%# render partial: 'shared/errors', locals: {obj: @user} %>
+                  <% if flash[:error].present? %>
+                    <br>
+                    <%= render 'shared/messages' %>
+                  <% end %>
+
+  
+                  <!-- <span class="fb_success_message"></span> -->
+
+                  <div class="divider"></div>
+
+                  <label class="label-register" for="">請填入新的密碼:</label>
+
+                  <div class="form-group form-grup-password">
+                    <div class="input-group">
+                      <span class="input-group-addon span-register-icon background-yellow">
+                          <i class="fa fa fa-key fa-2x fa-fw"></i>
+                      </span>
+                      <%= password_field_tag(:password, nil, class: "form-control input-flat", placeholder: "新的密碼") %>
+                      <!-- <input type="text" class="form-control input-flat" placeholder="密碼"> -->
+                      <%= hidden_field_tag(:token, @token) %>
+                    </div>
+                  </div>
+
+        
+                  <%= submit_tag "重設密碼", class: "input-register-submit hover_opacity background-yellow"%>
+
+
+              <% end %>
+          </div>  <!-- end of well -->
+        </div> <!-- end of col-md-6 -->
+    </div> <!-- end of row -->
+  </div>
+</section>

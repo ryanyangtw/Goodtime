@@ -15,7 +15,7 @@
               <%= form_tag(user_session_path, class: "form-login") do %>
 
                   <%# render partial: 'shared/errors', locals: {obj: @user} %>
-                  <% if flash[:error].present? %>
+                  <% if flash[:error].present? || flash[:notice].present?%>
                     <br>
                     <%= render 'shared/messages' %>
                   <% end %>
@@ -61,7 +61,7 @@
                   <div class="divider"></div>
                   <!-- <input class="input-register-submit hover_opacity" type="button" value="註冊"> -->
                   
-                  <%= link_to("忘記密碼？", "#", class: "login-description") %>
+                  <%= link_to("忘記密碼？", forgot_password_path, class: "login-description") %>
                   <br>
                   <span class="login-description">還沒有好時光帳號？</span>
                   <%= link_to("註冊", new_user_registration_path, class: "btn btn-info ")%> 

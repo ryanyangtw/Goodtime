@@ -11,7 +11,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to root_path
     else
       session["devise.facebook_data"] = request.env["omniauth.auth"]
-      flash[:error] = "您的帳戶不存在，請重新註冊。謝謝：)"
+      flash[:error] = "您未曾使用 Facebook 帳號註冊好時光，請重新註冊。謝謝：)"
       redirect_to new_user_registration_path
     end
   end

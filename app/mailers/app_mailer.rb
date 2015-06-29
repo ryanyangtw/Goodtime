@@ -8,7 +8,7 @@ class AppMailer < ActionMailer::Base
 
   def send_forgot_password(user)
     @user = user
-    mail to: user.email, subject: "好時光-從新設置密碼"
+    mail to: user.email, subject: "好時光-重新設置密碼"
   end
 
   # def send_invitation_email(invitation)
