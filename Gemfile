@@ -46,6 +46,8 @@ gem 'mini_magick'
 gem "figaro"
 
 gem 'sidekiq'
+gem 'sinatra', require: false
+gem 'slim'
 
 gem 'bootstrap_form'
 
@@ -53,6 +55,9 @@ gem 'compass-rails', git: 'https://github.com/Compass/compass-rails.git', branch
 
 
 gem 'bootstrap-multiselect-rails'
+
+# gem 'roadie'
+# gem 'roadie-rails'
 
 group :staging, :production do
   gem 'rails_12factor'
@@ -85,6 +90,11 @@ group :development, :test do
   gem 'awesome_print', :require => false
   gem 'hirb', :require => false
   gem 'hirb-unicode', :require => false
+end
+
+group :development do
+  # gem 'thin'
+  gem 'letter_opener'
 end
 
 group :test do

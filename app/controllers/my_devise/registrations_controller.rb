@@ -20,6 +20,8 @@ class MyDevise::RegistrationsController < ApplicationController # Devise::Regist
     end
 
     if @user.save
+      AppMailer.delay.send_welcome_email(@user)
+      
       session[:user_id] = @user.id
       flash[:notice] = "註冊成功"
       redirect_to root_path

@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   root to: "pages#index"
   resources :users, only: [:new, :create, :edit, :update]
 
+
+  #add for sidekiq dashboard
+  require 'sidekiq/web'
+  mount Sidekiq::Web, at: "/sidekiq"
+  
   # resources :sessions, only: :create
   # get 'sign_in', to: "sessions#new"
   # delete 'sign_out', to: "sessions#destroy"
