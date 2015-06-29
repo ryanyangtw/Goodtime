@@ -10,6 +10,11 @@
           </div>
 
           <div class="well background-white" >
+              
+              <br>
+              <div class="well" style="color: #51C3C0;">
+                <h3>會員編號: &nbsp; <%= @user.member_id%></h3>
+              </div>
 
               <%= form_for(@user, html: { class: "form-edit"},  url: user_registration_path, method: :patch ) do |f| %>
 
