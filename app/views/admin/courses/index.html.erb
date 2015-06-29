@@ -1,0 +1,46 @@
+<span style="font-size: 32px;">管理課程</span>
+
+<%= link_to("新增課程", new_admin_course_path, class: "pull-right btn btn-info btn-lg") %>
+
+<div class="divider"></div>
+
+<div class="row">
+  <div class="col-md-12 well">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>名稱</th>
+          <th>年份編號</th>
+          <th>季節編號</th>
+          <th>修改</th>
+          <th>刪除</th>
+
+        </tr>
+      </thead>
+  
+      <tbody>
+
+          <%@courses.each do |course|%>
+
+            <tr>
+              <td><%= course.id %></td>
+              <td> <%= link_to(course.name, admin_course_path(course)) %> </td>
+              <td><%= course.number_of_year %> </td>
+              <td><%= course.number_of_season %> </td>
+
+              <td><%= link_to('編輯', edit_admin_course_path(course), :class=>'btn btn-info btn-lg')%></td>
+              
+              <td><%= link_to('刪除', admin_course_path(course), :method => :delete,:class=>'btn btn-danger btn-lg', data: {confirm: "確定要刪除此課程？"})%></td>
+ 
+            </tr>
+          
+          <%end%> 
+
+      </tbody>
+
+
+    </table>
+  </div>
+</div>
+

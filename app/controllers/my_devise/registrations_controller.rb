@@ -9,8 +9,8 @@ class MyDevise::RegistrationsController < ApplicationController # Devise::Regist
 
   def create
     #super
-
-    #binding.pry
+    
+    # binding.pry
     @user = User.new(user_create_params)
 
     if @user.provider.present?
@@ -20,6 +20,7 @@ class MyDevise::RegistrationsController < ApplicationController # Devise::Regist
     end
 
     if @user.save
+      @user.course_ids = params[:user][:course_ids]
       AppMailer.delay.send_welcome_email(@user)
       
       session[:user_id] = @user.id
@@ -62,7 +63,7 @@ class MyDevise::RegistrationsController < ApplicationController # Devise::Regist
   private
 
   def user_create_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :provider, :uid, :name, :nickname, :phone_number, :address_country, :address_district, :birthday_year, :birthday_month, :birthday_date, course_ids: [])
+    params.require(:user).permit(:email, :password, :password_confirmation, :provider, :uid, :name, :nickname, :phone_number, :address_country, :address_district, :birthday_year, :birthday_month, :birthday_date) #, course_ids: []
   end
 
   def user_update_params

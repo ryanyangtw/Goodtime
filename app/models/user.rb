@@ -30,6 +30,14 @@ class User < ActiveRecord::Base
     self.update_columns(token: nil)
   end
 
+  def created_today?
+    self.created_at.to_date == Date.today
+  end
+
+  def change_role
+    self.update_columns(admin: !self.admin)
+  end
+
 
   private
 
@@ -42,4 +50,5 @@ class User < ActiveRecord::Base
     end
     # self.token = SecureRandom.urlsafe_base64
   end
+  
 end

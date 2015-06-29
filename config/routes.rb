@@ -11,6 +11,19 @@ Rails.application.routes.draw do
   resources :password_resets, only: [:show, :create]
   get 'expired_token', to: 'pages#expired_token'
 
+  namespace :admin do
+    root to: 'users#index'
+    
+    resources :courses
+    resources :users, only: [:index, :destroy] do
+      member do 
+        put :change_role
+      end
+    end
+  end
+
+
+
 
   #add for sidekiq dashboard
   require 'sidekiq/web'
