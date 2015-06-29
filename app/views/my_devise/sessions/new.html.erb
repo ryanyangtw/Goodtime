@@ -60,8 +60,11 @@
 
                   <div class="divider"></div>
                   <!-- <input class="input-register-submit hover_opacity" type="button" value="註冊"> -->
-
-                  <span class="login-description">Already a member ? Login Here</span>
+                  
+                  <%= link_to("忘記密碼？", "#", class: "login-description") %>
+                  <br>
+                  <span class="login-description">還沒有好時光帳號？</span>
+                  <%= link_to("註冊", new_user_registration_path, class: "btn btn-info ")%> 
 
               <% end %>
           </div>  <!-- end of well -->

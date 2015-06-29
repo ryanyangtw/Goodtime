@@ -1,3 +1,12 @@
+@mixin rwd($device){
+  @media screen and (max-width: $device){
+    @content;
+  }
+}
+
+
+$mobile: 768px;
+
  /*---login-02---------*/
 .two-login-head{
   background: #89FFFF;
@@ -289,6 +298,10 @@
   /*vertical-align: middle;*/
 
   @include border-radius(5px);
+
+  @include rwd($mobile){
+    width: 100%;
+  }
 }
 
 .fb_btn.fb_btn_login {
@@ -339,6 +352,7 @@
 .form-grup-current_password {
   margin-top: 25px;
 }
+
 
 // .alert-error {
 //   background-color: #c0392b;
