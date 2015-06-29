@@ -23,8 +23,8 @@
           <tr>
             <td><%= @course.id %></td>
             <td><%= @course.name %> </td>
-            <td><%= @course.number_of_year %> </td>
-            <td><%= @course.number_of_season %> </td>
+            <td><%= @course.year %> </td>
+            <td><%= @course.month %> </td>
 
             <td><%= link_to('編輯', edit_admin_course_path(@course), :class=>'btn btn-info btn-lg')%></td>
             

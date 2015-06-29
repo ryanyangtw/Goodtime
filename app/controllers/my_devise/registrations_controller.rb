@@ -21,6 +21,7 @@ class MyDevise::RegistrationsController < ApplicationController # Devise::Regist
 
     if @user.save
       @user.course_ids = params[:user][:course_ids]
+      @user.generate_member_id
       AppMailer.delay.send_welcome_email(@user)
       
       session[:user_id] = @user.id
@@ -28,6 +29,7 @@ class MyDevise::RegistrationsController < ApplicationController # Devise::Regist
       redirect_to root_path
       # redirect_to new_user_session_path
     else
+      @user.course_ids = params[:user][:course_ids]
       # flash[:error] = "資料填寫不完整"
       render :new
     end

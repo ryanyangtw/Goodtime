@@ -11,17 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150629105459) do
+ActiveRecord::Schema.define(version: 20150629135001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "courses", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.string   "number_of_year"
-    t.string   "number_of_season"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "year"
+    t.string   "month"
   end
 
   create_table "registration_forms", force: :cascade do |t|
@@ -59,6 +59,9 @@ ActiveRecord::Schema.define(version: 20150629105459) do
     t.string   "name"
     t.string   "token"
     t.boolean  "admin",                  default: false
+    t.string   "member_id_year"
+    t.string   "member_id_month"
+    t.integer  "member_id_number"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

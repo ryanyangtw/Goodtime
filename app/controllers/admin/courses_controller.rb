@@ -58,7 +58,7 @@ class Admin::CoursesController < AdminController
   end
 
   def course_params
-    params.require(:course).permit(:name, :number_of_year, :number_of_season)
+    params.require(:course).permit(:name, :year, :month)
   end
 
 end
