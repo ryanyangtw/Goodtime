@@ -54,16 +54,34 @@ class User < ActiveRecord::Base
     
     max_member_id_number = user.present? ? user.member_id_number : 0
     self.member_id_number = max_member_id_number + 1
+
+
+    # combine to specific member_id
+    alpha_arr = ('a'..'z').to_a
+    number = self.member_id_number % 1000
+
+    if number / 10 == 0
+      number_string = "00" + number.to_s
+    elsif number / 100 == 0
+      number_string = "0" + number.to_s
+    else
+      number_string = number.to_s
+    end
+      
+    alpha = alpha_arr[self.member_id_number/1000]
+    
+    self.member_id = self.member_id_year + self.member_id_month + number_string + alpha
+
     self.save(validate: false)
   end
 
-  def member_id
-    alpha_arr = ('a'..'z').to_a
-    number = self.member_id_number % 1000
-    alpha = alpha_arr[self.member_id_number/1000]
+  # def member_id
+  #   alpha_arr = ('a'..'z').to_a
+  #   number = self.member_id_number % 1000
+  #   alpha = alpha_arr[self.member_id_number/1000]
     
-    self.member_id_year + self.member_id_month + number.to_s + alpha
-  end
+  #   self.member_id_year + self.member_id_month + number.to_s + alpha
+  # end
 
 
   private
