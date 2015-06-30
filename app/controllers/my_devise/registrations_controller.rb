@@ -2,6 +2,7 @@ class MyDevise::RegistrationsController < ApplicationController # Devise::Regist
 
   before_action :set_addres_convert_table
   before_action :set_birthday_day_hash
+  before_action :require_user, only: [:edit, :update]
 
   def new
     @user = User.new
