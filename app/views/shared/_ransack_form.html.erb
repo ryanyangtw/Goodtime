@@ -2,7 +2,7 @@
     <div class="form-group">
         <div class="input-group">
           <% value = params[:q][:email_or_name_or_nickname_cont] if params[:q]%>
-          <%= f.search_field(:email_or_phone_number_or_name_or_nickname_cont, value: value, :class=>"form-control input-nonhidden", :id=>"navbarInput-01", :type=>"search", :placeholder=>"Search") %>
+          <%= f.search_field(:email_or_phone_number_or_name_or_nickname_or_member_id_cont, value: value, :class=>"form-control input-nonhidden", :id=>"navbarInput-01", :type=>"search", :placeholder=>"Search") %>
 
           
           <span class="input-group-btn">
