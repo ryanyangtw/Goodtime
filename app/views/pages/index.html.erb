@@ -8,14 +8,20 @@
 
             <!-- <div class="container"> -->
                 <!-- <div class="row"> -->
+
+                    <h1>最歡樂的女生運動社群<br>不求最厲害，但一定最歡樂</h1>
+                    <hr>
+                    <p>好時光提供女孩們專業的運動訓練課程、全新的運動體驗，更重要的事，妳可以認識更多一起運動的夥伴，讓運動不在孤單乏味，徹底愛上運動！</p>
+                    <%= link_to('註冊', new_user_registration_path, class: "btn btn-primary btn-xl page-scroll btn-pink") %>
+                    <!-- <a href="#about" class="btn btn-primary btn-xl page-scroll btn-pink">註冊</a> -->
    
                     <!-- <div class="col-md-6"> -->
                       <!-- <div class="display-table"> -->
                       <!-- <div class="left-banner"> -->
-                          <h1>Your Favorite Source of Free Bootstrap Themes</h1>
+                          <!-- <h1>Your Favorite Source of Free Bootstrap Themes</h1>
                           <hr>
                           <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
-                          <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+                          <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a> -->
                       <!-- </div> -->
                       <!-- </div> -->
                     <!-- </div> end of col-md-6 -->
@@ -34,10 +40,26 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading">We've got what you need!</h2>
+              <h2 class="section-heading">在運動上是否感到困擾？</h2>
+              <hr class="light">
+              <span class="text-faded span-text">覺得運動很無聊？ 想要維持運動習慣，但又不小心就懈怠了？</span>
+                        
+              </br>
+              <span class="text-faded span-text">好時光讓妳體驗好玩的運動訓練，認識更多一起運動的好夥伴！</span>
+              </br>
+
+              <span class="text-faded span-text"> 讓運動不再是無聊的訓練，而是生活中最重要的好時光。</span>
+
+              </br>
+              </br>
+
+              <%= link_to("加入好時光", new_user_registration_path, class: "btn btn-default btn-xl")%>
+
+             
+                <!-- <h2 class="section-heading">We've got what you need!</h2>
                 <hr class="light">
                 <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-                <a href="#" class="btn btn-default btn-xl">Get Started!</a>
+                <a href="#" class="btn btn-default btn-xl">Get Started!</a> -->
             </div>
         </div>
     </div>
@@ -47,8 +69,10 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading">At Your Service</h2>
-                <hr class="primary">
+              <h2 class="section-heading">好時光提供...</h2>
+              <hr class="primary">
+                <!-- <h2 class="section-heading">At Your Service</h2>
+                <hr class="primary"> -->
             </div>
         </div>
     </div>
@@ -56,30 +80,42 @@
         <div class="row">
             <div class="col-lg-3 col-md-6 text-center">
                 <div class="service-box">
-                    <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
-                    <h3>Sturdy Templates</h3>
-                    <p class="text-muted">Our templates are updated regularly so they don't break.</p>
+                    <%= image_tag('service_1.png') %>
+                    <!-- <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i> -->
+                    <h3>歡樂</h3>
+                    <p class="text-muted">將遊戲及團體互動，結合運動訓練，讓每次的運動都充滿歡笑聲</p>
+                    <!-- <h3>Sturdy Templates</h3>
+                    <p class="text-muted">Our templates are updated regularly so they don't break.</p> -->
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">
                 <div class="service-box">
-                    <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
-                    <h3>Ready to Ship</h3>
-                    <p class="text-muted">You can use this theme as is, or you can make changes!</p>
+                    <%= image_tag('service_3.png') %>
+                    <!-- <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i> -->
+                    <h3>健康</h3>
+                    <p class="text-muted">運動不只是為了減肥，好時光要讓妳越動越健康</p>
+                    <!-- <h3>Ready to Ship</h3>
+                    <p class="text-muted">You can use this theme as is, or you can make changes!</p> -->
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">
                 <div class="service-box">
-                    <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
-                    <h3>Up to Date</h3>
-                    <p class="text-muted">We update dependencies to keep things fresh.</p>
+                    <%= image_tag('service_2.png') %>
+                    <!-- <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i> -->
+                    <h3>陪伴</h3>
+                    <p class="text-muted">好時光就是妳第二個家，大家一起運動，一起分享生活的酸甜苦辣。</p>
+                    <!-- <h3>Up to Date</h3>
+                    <p class="text-muted">We update dependencies to keep things fresh.</p> -->
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">
                 <div class="service-box">
-                    <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
-                    <h3>Made with Love</h3>
-                    <p class="text-muted">You have to make your websites with love these days!</p>
+                    <%= image_tag('service_4.png') %>
+                    <!-- <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i> -->
+                    <h3>專業</h3>
+                    <p class="text-muted">最懂女孩的專業教練，給你最正確的訓練指導。</p>
+                    <!-- <h3>Made with Love</h3>
+                    <p class="text-muted">You have to make your websites with love these days!</p> -->
                 </div>
             </div>
         </div>
@@ -95,12 +131,18 @@
                     <!-- <img src="img/portfolio/1.jpg" class="img-responsive" alt=""> -->
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
+                          <div class="project-category text-faded">
+                              跑步課程
+                          </div>
+                          <div class="project-name">
+                              想要跑得更輕鬆、更遠，除了靠練習，還要用對方法，好時光教練用心設計每週的訓練菜單，陪女孩們一起進步。
+                          </div>
+                            <!-- <div class="project-category text-faded">
                                 Category
                             </div>
                             <div class="project-name">
                                 Project Name
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </a>
@@ -111,12 +153,18 @@
                     <!-- <img src="img/portfolio/2.jpg" class="img-responsive" alt=""> -->
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
+                          <div class="project-category text-faded">
+                              肌力課程
+                          </div>
+                          <div class="project-name">
+                              不只讓妳變得更精實，每個動作都分解說明，才能做得正確，達到最好的效果。
+                          </div>
+                            <!-- <div class="project-category text-faded">
                                 Category
                             </div>
                             <div class="project-name">
                                 Project Name
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </a>
@@ -127,12 +175,18 @@
                     <!-- <img src="img/portfolio/3.jpg" class="img-responsive" alt=""> -->
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
+                          <div class="project-category text-faded">
+                              有氧舞蹈課程
+                          </div>
+                          <div class="project-name">
+                              不停歇的有氧舞蹈，飆汗high翻天
+                          </div>
+                            <!-- <div class="project-category text-faded">
                                 Category
                             </div>
                             <div class="project-name">
                                 Project Name
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </a>
@@ -143,44 +197,64 @@
                     <!-- <img src="img/portfolio/4.jpg" class="img-responsive" alt=""> -->
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
+                          <div class="project-category text-faded">
+                              好時光女生運動商品
+                          </div>
+                          <div class="project-name">
+                              好時光獨家設計品牌，給妳滿滿的力量
+                          </div>
+                            <!-- <div class="project-category text-faded">
                                 Category
                             </div>
                             <div class="project-name">
                                 Project Name
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-                <a href="#" class="portfolio-box">
+                <a href="https://www.facebook.com/groups/685426698217902/" target="blank_" class="portfolio-box">
+                <!-- <a href="#" class="portfolio-box"> -->
                     <%= image_tag("5.jpg", class: "img-responsive", alt: "")%>
                     <!-- <img src="img/portfolio/5.jpg" class="img-responsive" alt=""> -->
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
+                          <div class="project-category text-faded">
+                              區長小姐
+                          </div>
+                          <div class="project-name">
+                              板橋區、大安區、景美區、北投區、內湖區，好時光每週固定開團揪跑，加入社團免費參加
+                          </div>
+                            <!-- <div class="project-category text-faded">
                                 Category
                             </div>
                             <div class="project-name">
                                 Project Name
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-                <a href="#" class="portfolio-box">
+                <a href="https://www.facebook.com/girlstimegoodtime" target="blank_" class="portfolio-box">
+                <!-- <a href="#" class="portfolio-box"> -->
                     <%= image_tag("6.jpg", class: "img-responsive", alt: "")%>
                     <!-- <img src="img/portfolio/6.jpg" class="img-responsive" alt=""> -->
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
+                          <div class="project-category text-faded">
+                              好時光同樂會2.0
+                          </div>
+                          <div class="project-name">
+                              所有好時光最新的活動資訊，以及各種女生運動資訊，都在好時光粉絲團
+                          </div>
+                            <!-- <div class="project-category text-faded">
                                 Category
                             </div>
                             <div class="project-name">
                                 Project Name
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </a>
@@ -189,31 +263,36 @@
     </div>
 </section>
 
-<aside class="bg-dark">
+<!-- <aside class="bg-dark">
     <div class="container text-center">
         <div class="call-to-action">
             <h2>Free Download at Start Bootstrap!</h2>
             <a href="#" class="btn btn-default btn-xl wow tada">Download Now!</a>
         </div>
     </div>
-</aside>
+</aside> -->
 
 
 <section id="contact">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading">Let's Get In Touch!</h2>
+              <h2 class="section-heading">跟我們聯繫</h2>
+              <hr class="primary">
+              <p>若妳對好時光還是不了解，或是對於課程有任何問題，都歡迎與我們聯繫</p>
+                <!-- <h2 class="section-heading">Let's Get In Touch!</h2>
                 <hr class="primary">
-                <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+                <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p> -->
             </div>
             <div class="col-lg-4 col-lg-offset-2 text-center">
                 <i class="fa fa-phone fa-3x wow bounceIn"></i>
-                <p>123-456-6789</p>
+                <a href="https://www.facebook.com/girlstimegoodtime"><p>好時光同樂會2.0</p></a>
+                <!-- <p>123-456-6789</p> -->
             </div>
             <div class="col-lg-4 text-center">
                 <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                <p><a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a></p>
+                <p><a href="mailto:girlstimegoodtime@gmail.com">girlstimegoodtime@gmail.com</a></p>
+                <!-- <p><a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a></p> -->
             </div>
         </div>
     </div>

@@ -13,5 +13,7 @@
  * require_tree .
  *= require bootstrap-multiselect
  *= require sass/main
+ #= require index
  *= require_self
  */
+

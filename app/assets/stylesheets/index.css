@@ -1,0 +1,27 @@
+hr {
+  border-color: #65c1c1;
+}
+
+
+.btn-pink {
+  border-color: #e06e9c;
+  background-color: #e06e9c;
+}
+
+.bg-primary {
+  background-color: #65c1c1;
+}
+
+.span-text {
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.portfolio-box .portfolio-box-caption {
+  background: rgba(5,146,146,.9);
+}
+
+a {
+  color: #65c1c1;
+}
