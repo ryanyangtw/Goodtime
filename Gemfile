@@ -60,6 +60,9 @@ gem 'bootstrap-multiselect-rails'
 
 gem 'ransack'
 
+gem 'seo_helper', '~> 1.0', :git => 'git://github.com/techbang/seo_helper.git'
+gem 'open_graph_helper', :github => 'techbang/open_graph_helper'
+
 # gem 'roadie'
 # gem 'roadie-rails'
 
