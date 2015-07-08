@@ -17,6 +17,14 @@ class User < ActiveRecord::Base
     return user
   end
 
+  def self.new_user_from_omniauth(auth)
+    user = User.new
+    user.provider = auth.provider
+    user.uid = auth.uid
+    user.nickname = auth.info.name
+    return user
+  end
+
   def register_from_fb?
     self.provider == "facebook"
   end

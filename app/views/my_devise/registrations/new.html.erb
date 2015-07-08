@@ -94,10 +94,25 @@
                   <%= f.hidden_field(:uid, class: "input-uid", hide_label: true)%>
   
 
+                  <label class="label-register" for="">請問你曾參加過好時光哪些活動:</label>
+                  <div class="radio radio-join">
+                    <label style="color: black;" >
+                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="1" checked>
+                      我尚未參加過好時光
+                    </label>
+                  </div>
+                  <div class="radio radio-join">
+                    <label style="color: black;">
+                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="2">
+                      我參加過好時光
+                    </label>
+                  </div>
 
-                  <label class="label-register" for="">請選擇加入過的跑團:</label>
+                  <div class="div-select-multiple hidden">
+                    <label class="label-register" for="">請選擇加入過的跑團:</label>
                  
-                  <%= f.select(:course_ids, Course.generateNameList, {}, class: "form-control select-group select-multiple", multiple: "multiple") %>
+                    <%= f.select(:course_ids, Course.generateNameList, {}, class: "form-control select-group select-multiple hide", multiple: "multiple") %>
+                  </div>
                   <!-- <select multiple="multiple" class="form-control select-group select-multiple">
                     <option selected="selected">2014 慢跑好女孩週四不偷懶</option>
                     <option>2014 好時光女生慢跑團春天班</option>

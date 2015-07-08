@@ -89,4 +89,7 @@ Rails.application.configure do
     :authentication => :plain,
   }
   ActionMailer::Base.delivery_method = :smtp
+
+  config.action_mailer.asset_host = 'https://girlstimegoodtime.herokuapp.com'
+  config.action_controller.asset_host = 'https://girlstimegoodtime.herokuapp.com'
 end

@@ -2,10 +2,39 @@
 $(document).ready(function() {
     $('.select-multiple').multiselect();
     generateAddressSelector();
+    setupMultipleSelectTitle();
+    detectCheckboxChange();
     // generateBirthdaySelector();
 
     // var country = {"台北市", "基隆市", "新北市", "連江縣", "宜蘭縣", "新竹市", "新竹縣"};
 });
+
+function detectCheckboxChange() {
+  $("input[type=radio]").change(function() {
+    // alert(this.value);
+    if(this.value === "1") {
+      hiddenMultipleSelect();
+    } else {
+      showMultipleSelect();
+    }
+
+  });
+
+}
+
+function hiddenMultipleSelect() {
+  $('.div-select-multiple').addClass("hidden");
+}
+
+function showMultipleSelect() {
+  $('.div-select-multiple').removeClass("hidden");
+}
+
+
+function setupMultipleSelectTitle() {
+  $('button.multiselect').html("請選擇 <b class='caret'></b>")
+}
+
 
 function generateBirthdaySelector() {
 

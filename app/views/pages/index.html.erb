@@ -12,7 +12,10 @@
                     <h1>最歡樂的女生運動社群<br>不求最厲害，但一定最歡樂</h1>
                     <hr>
                     <p>好時光提供女孩們專業的運動訓練課程、全新的運動體驗，更重要的事，妳可以認識更多一起運動的夥伴，讓運動不在孤單乏味，徹底愛上運動！</p>
-                    <%= link_to('註冊', new_user_registration_path, class: "btn btn-primary btn-xl page-scroll btn-pink") %>
+
+                    <% if !current_user %>
+                      <%= link_to('註冊', new_user_registration_path, class: "btn btn-primary btn-xl page-scroll btn-pink") %>
+                    <% end %>
                     <!-- <a href="#about" class="btn btn-primary btn-xl page-scroll btn-pink">註冊</a> -->
    
                     <!-- <div class="col-md-6"> -->
@@ -52,8 +55,12 @@
 
               </br>
               </br>
+              <% if current_user %>
+                <%= link_to("加入好時光", "https://www.facebook.com/girlstimegoodtime", class: "btn btn-default btn-xl")%>
+              <% else %>
+                <%= link_to("加入好時光", new_user_registration_path, class: "btn btn-default btn-xl")%>
+              <% end %>
 
-              <%= link_to("加入好時光", new_user_registration_path, class: "btn btn-default btn-xl")%>
 
              
                 <!-- <h2 class="section-heading">We've got what you need!</h2>
