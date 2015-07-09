@@ -77,7 +77,7 @@ class MyDevise::RegistrationsController < ApplicationController # Devise::Regist
 
   def set_birthday_day_hash
     @birthday_year_hash = {}
-    for i in 1970..2015
+    for i in 1950..2015
       text = i.to_s + "年"
       h = {"#{text}": i.to_s}
       @birthday_year_hash.merge!(h)
