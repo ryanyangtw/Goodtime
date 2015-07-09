@@ -10,7 +10,7 @@ class ForgotPasswordsController < ApplicationController
       AppMailer.delay.send_forgot_password(user)
       redirect_to forgot_password_confirmation_path
     else
-      if user.provider = 'facebook'
+      if user && user.provider == 'facebook'
         flash[:error] = '此帳號是由fb登入，不可修改密碼'
         redirect_to forgot_password_path
       else
