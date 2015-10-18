@@ -8,7 +8,7 @@
 <div class="divider"></div>
 
 <div class="row">
-  <div class="col-md-12 well">
+  <div class="col-md-12">
     <table class="table table-striped">
       <thead>
         <tr>
@@ -24,6 +24,7 @@
           <th>provider</th>
           <th>role</th>
           <th>修改權限</th>
+          <th>編輯</th>
           <th>刪除</th>
 
         </tr>
@@ -74,6 +75,8 @@
                   <%= link_to("設為管理者", change_role_admin_user_path(user), class: "btn btn-warning btn-sm", method: :put) %>
                 <% end %>
               </td>
+
+              <td> <%= link_to('編輯', edit_admin_user_path(user), class: "btn btn-default btn-sm") %> </td> 
      
               <td><%= link_to('刪除', admin_user_path(user), :method => :delete, :class=>'btn btn-danger btn-sm', data: { confirm: "確定要刪除該名會員？" }) %></td>
             </tr>

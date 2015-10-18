@@ -15,9 +15,10 @@ Rails.application.routes.draw do
     root to: 'users#index'
     
     resources :courses
-    resources :users, only: [:index, :destroy] do
+    resources :users, only: [:index, :destroy, :edit, :update] do
       member do 
         put :change_role
+        put :generate_member_id
       end
 
       collection do

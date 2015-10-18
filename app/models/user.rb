@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 
   validates_presence_of :password_confirmation, :name, :nickname, :phone_number, :address_country, :address_district, :birthday_year, :birthday_month, :birthday_date
   # :email, :password, :provider, :uid, :name, :nickname, :phone_number, :address_country, :address_district, :birthday_year, :birthday_month, :birthday_date
+  before_create :generate_member_id
 
   def self.from_omniauth(auth)
     user = User.find_by(provider: auth.provider, uid: auth.uid)
@@ -52,7 +53,7 @@ class User < ActiveRecord::Base
       self.member_id_year = Date.today.strftime("%Y").slice(1, 3)
       self.member_id_month = Date.today.strftime("%m")
     else 
-      earliest_course = self.courses.order(id: :asc).first
+      earliest_course = self.courses.sort{|a,b| a.id <=> b.id }.first # self.courses.order(id: :asc).first
       self.member_id_year = earliest_course.year.slice(1, 3)
       self.member_id_month = earliest_course.month
       #User.where(member_id_year: "15", member_id_month: "01").order(member_id_number: :desc).limit(1)
@@ -80,7 +81,7 @@ class User < ActiveRecord::Base
     
     self.member_id = self.member_id_year + self.member_id_month + number_string + alpha
 
-    self.save(validate: false)
+    # self.save(validate: false)
   end
 
   # def member_id

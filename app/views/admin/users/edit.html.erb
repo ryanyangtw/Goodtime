@@ -1,0 +1,34 @@
+
+<div class='col-md-12 well' >
+  <h2>編輯會員上過的課程</h2> 
+
+  <h4> 會員姓名: <%= @user.name %></h4> 
+  <h4> 會員編號: <%= @user.member_id %></h4> 
+  <h4> 會員Email: <%= @user.email %></h4> 
+
+
+  <%= form_for @user, url: admin_user_path, html: {method: :PATCH} do |f|%>
+    <div class='control-group'>
+      <%#= f.label "重設課程" %>
+      <div class="divider"></div>
+      <%= f.collection_check_boxes :course_ids, Course.order(id: :asc), :id, :name do |cb|%>
+        
+        <%= cb.label(class: "checkbox inline") {cb.check_box(class: "checkbox") + cb.text} %>
+        <%#= image_tag(cb.object.image.url(:small)) %>
+      <% end %>
+    </div>
+
+    <div class="form_group">
+      <%= f.submit('確認更改', :class=>'btn btn-md btn-info')%>
+    </div>
+  <%end%>
+</div> 
+
+
+<div class='col-md-12 well'>
+  <h2>重新產生會員編號</h2>
+  <p>會員編號會根據學員上過的課程決定。因此，請先確認學員已正確填入曾經上過之課程。</p>
+  <%= link_to("重新產生", generate_member_id_admin_user_path(@user), method: :put, class: "btn btn-md btn-danger", data: {confirm: "會員編號會根據學員上過的課程決定。因此，請先確認學員已正確填入曾經上過之課程。若確認無誤，請按確認鍵"}) %>
+</div>
+
+
