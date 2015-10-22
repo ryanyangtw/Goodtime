@@ -1,0 +1,75 @@
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Jumbotron Header -->
+        <div class="jumbotron hero-spacer" style="margin-top: 100px;">
+
+            <h1>A Warm Welcome!</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+            <p><a class="btn btn-primary btn-large">Call to action!</a>
+            </p>
+
+        </div>
+
+        <hr>
+
+        <!-- Title -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Latest Features</h3>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Page Features -->
+        <div class="row text-center">
+
+         
+          <% @activities.each_with_index do |activity, index| %>
+            <% if(index%3 == 0)%>
+              <div class="row ">
+            <% end %>
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <%= image_tag(activity.image.url) %>
+                    <!-- <img src="img/event1_1.png" alt=""> -->
+                    <div class="caption">
+                        <h3> <%= activity.title %> </h3>
+                        <p> <%= activity.description %></p>
+                        <p>
+                          <%= link_to("報名", activity.registration_link, target: "_blank", class: "btn btn-primary") %>
+
+                          <%= link_to("更多資訊", activity.more_information_link, target: "_blank", class: "btn btn-default") %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <% if(index%3 == 2 || index == @activities.size - 1)%>
+              </div>
+            <% end %>
+          <% end %>
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+
+    <script type="text/javascript">
+
+    </script>

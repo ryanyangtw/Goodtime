@@ -1,0 +1,51 @@
+
+<div class="divider"></div>
+<%= render partial: 'shared/errors', locals: {obj: @activity}%>
+
+<div class="form-group">
+  
+  <%= f.label(:title,'名稱:') %>
+  <%= f.text_field(:title , :class => "form-control") %>
+
+</div>
+
+<div class = "form-group">
+  <%= f.label(:description, "描述:") %>
+  <%= f.text_area(:description , :class => "form-control", rows: 10) %>
+</div>
+
+<div class = "form-group">
+  <%= f.label(:registration_link, "報名連結:") %>
+  <%= f.text_field(:registration_link , :class => "form-control") %>
+</div>
+
+<div class = "form-group">
+  <%= f.label(:more_information_link, "更多資訊連結:") %>
+  <%= f.text_field(:more_information_link , :class => "form-control") %>
+</div>
+
+
+
+
+<div class="form-group">
+  <%= f.label(:image, "圖片:") %>
+  <%= f.file_field(:image , id: "myFileInput", :class => "form-control file") %>
+</div>
+  <%# if @activity.image.url.present? %>
+    <%#= image_tag(@activity.image.url, style: "width: 400px;") %>
+  <%# end %>
+
+<div class="upload-preview">
+  <%= image_tag(@activity.image.url, style: "width: 400px;") %>
+</div>
+
+
+
+
+<% content_for :customize_jquery do%>
+  <%= javascript_include_tag 'upload_miniature.js' %>
+<% end %>
+  
+
+
+

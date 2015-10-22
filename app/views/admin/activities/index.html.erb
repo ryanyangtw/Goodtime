@@ -1,0 +1,48 @@
+
+<span style="font-size: 32px;">管理活動</span>
+
+<%= link_to("新增活動", new_admin_activity_path, class: "pull-right btn btn-info btn-lg") %>
+
+<div class="divider"></div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>title</th>
+          <th>image</th>
+          <th>desctiption</th>
+          <th>registration_link</th>
+          <th>more_information_link</th>
+          <th>編輯</th>
+          <th>刪除</th>
+
+        </tr>
+      </thead>
+  
+      <tbody>
+
+          <% @activities.each do |activity| %>
+  
+              <td><%= activity.id %></td>
+              <td><%= activity.title %></td>
+              <td><%= image_tag(activity.image.url, style: "width: 100px; height: 100px;") %></td>
+              <td><%= activity.description %> </td>
+              <td><%= activity.registration_link %></td>
+              <td><%= activity.more_information_link %></td>
+   
+              <td> <%= link_to('編輯', edit_admin_activity_path(activity), class: "btn btn-primary btn-sm") %> </td> 
+     
+              <td><%= link_to('刪除', admin_activity_path(activity), :method => :delete, :class=>'btn btn-danger btn-sm', data: { confirm: "確定要刪除該活動？" }) %></td>
+            </tr>
+          
+          <%end%> 
+
+      </tbody>
+
+
+    </table>
+  </div>
+</div>

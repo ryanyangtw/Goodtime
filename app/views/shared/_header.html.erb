@@ -23,16 +23,20 @@
             <ul class="nav navbar-nav navbar-right">
 
                 <li>
-                    <a class="page-scroll" href="#about">關於我們</a>
+                    <a class="page-scroll" href="/#about">關於我們</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#services">特色</a>
+                    <a class="page-scroll" href="/#services">特色</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#portfolio">服務</a>
+                    <a class="page-scroll" href="/#portfolio">服務</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#contact">聯繫我們</a>
+                    <a class="page-scroll" href="/#contact">聯繫我們</a>
+                </li>
+
+                <li>
+                    <%= link_to("活動", activities_path, class: "page-scroll") %>
                 </li>
                 <% if current_user %>
                   <li>

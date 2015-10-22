@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :password_resets, only: [:show, :create]
   get 'expired_token', to: 'pages#expired_token'
 
+  resources :activities, only: [:index]
+
   namespace :admin do
     root to: 'users#index'
     
@@ -25,6 +27,8 @@ Rails.application.routes.draw do
         get :search
       end
     end
+
+    resources :activities
   end
 
 
