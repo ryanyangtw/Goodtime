@@ -27,7 +27,7 @@
 
          
           <% @activities.each_with_index do |activity, index| %>
-            <% if(index%3 == 0)%>
+            <% if(index%4 == 0)%>
               <div class="row ">
             <% end %>
 
@@ -47,7 +47,7 @@
                 </div>
             </div>
 
-            <% if(index%3 == 2 || index == @activities.size - 1)%>
+            <% if(index%4 == 3 || index == @activities.size - 1)%>
               </div>
             <% end %>
           <% end %>
@@ -55,16 +55,16 @@
         </div>
         <!-- /.row -->
 
-        <hr>
+        <!-- <hr> -->
 
         <!-- Footer -->
-        <footer>
+        <!-- <footer>
             <div class="row">
                 <div class="col-lg-12">
                     <p>Copyright &copy; Your Website 2014</p>
                 </div>
             </div>
-        </footer>
+        </footer> -->
 
     </div>
     <!-- /.container -->
